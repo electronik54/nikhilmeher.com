@@ -4,7 +4,7 @@
 
   --contentBgColor: rgb(15, 15, 15);
   --mainBgColor: rgb(46, 46, 46);
-  
+
   --defaultFontColor: rgb(226, 226, 226);
 }
 
@@ -20,9 +20,7 @@
   justify-content: space-evenly;
   color: var(--defaultFontColor);
 
-
-  font-family: 'Ropa Sans', sans-serif;
-
+  font-family: "Ropa Sans", sans-serif;
 }
 
 h2 {
@@ -34,10 +32,6 @@ h2 {
 
 /*OTHER END -- OTHER END -- OTHER END -- OTHER END -- OTHER END -- OTHER END*/
 /*OTHER END -- OTHER END -- OTHER END -- OTHER END -- OTHER END -- OTHER END*/
-
-
-
-
 
 /*HEADER -- HEADER -- HEADER -- HEADER -- HEADER -- HEADER -- HEADER -- HEADER -- HEADER*/
 /*HEADER -- HEADER -- HEADER -- HEADER -- HEADER -- HEADER -- HEADER -- HEADER -- HEADER*/
@@ -70,10 +64,14 @@ header > article {
   align-items: center;
 }
 
+/*ABOUT -- ABOUT -- ABOUT -- ABOUT -- ABOUT -- ABOUT*/
+/*ABOUT -- ABOUT -- ABOUT -- ABOUT -- ABOUT -- ABOUT*/
+#headderAbout div {
+  padding: calc(var(--mainBlankArea) / 2) var(--mainBlankArea);
+  background-color: rgba(0, 0, 0, 0.5);
+}
 
-/*ABOUT -- ABOUT -- ABOUT -- ABOUT -- ABOUT -- ABOUT*/
-/*ABOUT -- ABOUT -- ABOUT -- ABOUT -- ABOUT -- ABOUT*/
-#headderAbout > p{
+#headderAbout p {
   text-align: justify;
 }
 /*ABOUT end -- ABOUT end -- ABOUT end -- ABOUT end -- ABOUT end*/
@@ -97,7 +95,6 @@ header > article {
   stroke-width: 25;
   stroke: var(--defaultFontColor);
   fill: none;
-  
 }
 #navContainer > nav > ul > li {
   margin: 1vw;
@@ -109,9 +106,9 @@ header > article {
 }
 
 #navContainer > nav > ul > li:hover {
-  box-shadow:0 6px 20px -2px rgba(0, 0, 0, 1);
+  box-shadow: 0 6px 20px -2px rgba(0, 0, 0, 1);
   transform: scale(1.3);
-  background-color:  var(--mainBgColor);
+  background-color: var(--mainBgColor);
 }
 
 /*NAV end -- NAV end -- NAV end -- NAV end -- NAV end -- NAV end*/
@@ -166,6 +163,12 @@ main > .mainSections:nth-child(odd) {
 }
 /*MAIN > ABOUT END -- MAIN > ABOUT END -- MAIN > ABOUT END -- MAIN > ABOUT END -- MAIN > ABOUT END*/
 /*MAIN > ABOUT END -- MAIN > ABOUT END -- MAIN > ABOUT END -- MAIN > ABOUT END -- MAIN > ABOUT END*/
+
+@media only screen and (max-width: 1200px) {
+  #headderAbout {
+    display: none;
+  }
+}
 
 @media only screen and (max-width: 800px) {
   #pageParent {

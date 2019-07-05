@@ -68,7 +68,7 @@ header > article {
 /*ABOUT -- ABOUT -- ABOUT -- ABOUT -- ABOUT -- ABOUT*/
 #headderAbout div {
   padding: calc(var(--mainBlankArea) / 2) var(--mainBlankArea);
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 #headderAbout p {
@@ -150,7 +150,8 @@ main > .mainSections:nth-child(odd) {
 
 .mainSections {
   min-height: calc(100% - var(--mainBlankArea) * 2);
-  margin: var(--mainBlankArea);
+  margin:0 var(--mainBlankArea) var(--mainBlankArea) var(--mainBlankArea);
+  padding-top:  var(--mainBlankArea);
 }
 
 /*MAIN END -- MAIN END -- MAIN END -- MAIN END -- MAIN END -- MAIN END -- MAIN END */

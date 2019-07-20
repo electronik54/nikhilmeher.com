@@ -2,14 +2,22 @@
   --mainBlankArea: 30px;
   --mainBlankArea2x: calc(var(--mainBlankArea) * 4);
 
-  --contentBgColor: rgb(15, 15, 15);
-  --mainBgColor: rgb(46, 46, 46);
+  --contentBgColor: rgb(22, 22, 22);
+  --mainBgColor: rgb(37, 37, 37);
 
   --defaultFontColor: rgb(226, 226, 226);
+
+  --defaultTransition: ease-in-out 0.1s all;
+
+  --defaultBoxShadow: inset 0 0 35px 0 #000000a6;
 }
 
 /*OTHER -- OTHER -- OTHER -- OTHER -- OTHER -- OTHER -- OTHER -- OTHER*/
 /*OTHER -- OTHER -- OTHER -- OTHER -- OTHER -- OTHER -- OTHER -- OTHER*/
+
+body {
+  font-size: 18px;
+}
 
 #pageParent {
   display: grid;
@@ -19,14 +27,13 @@
   /* max-height: 100vh; */
   justify-content: space-evenly;
   color: var(--defaultFontColor);
-
   font-family: "Ropa Sans", sans-serif;
 }
 
 h2 {
   text-align: center;
   font-size: 2em;
-  margin: 10px 0;
+  /* margin: 10px 0; */
   font-family: "Didact Gothic", sans-serif;
 }
 
@@ -43,8 +50,9 @@ h2 {
 
   display: grid;
   grid-template-rows: 60% 40%;
+  /* grid-template-rows: 6fr 4fr;      <<<<    WONT WORK*/
 
-  box-shadow: inset 0 0 35px 0 #000000a6;
+  box-shadow: var(--defaultBoxShadow);
 
   background-image: url(../resources/images/oneYork_1.jpg);
   background-size: cover;
@@ -85,8 +93,8 @@ header > article {
 }
 #navContainer > nav ul {
   display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 50% 50%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
 }
 #navContainer > nav > ul > li > a > svg {
   height: 40px;
@@ -101,7 +109,7 @@ header > article {
   background-color: var(--mainBgColor);
   padding: 5px;
 
-  transition: ease-in-out 0.1s all;
+  transition: var(--defaultTransition);
 }
 
 #navContainer > nav > ul > li:hover {
@@ -112,11 +120,18 @@ header > article {
 
 /*NAV end -- NAV end -- NAV end -- NAV end -- NAV end -- NAV end*/
 /*NAV end -- NAV end -- NAV end -- NAV end -- NAV end -- NAV end*/
-
+/* #logoParent {
+  display: block;
+  height: 100%;
+} */
 #logo {
   fill: var(--mainBgColor);
   height: 100%;
   max-height: 40vw;
+  transition: var(--defaultTransition);
+}
+#logo:hover {
+  fill: var(--contentBgColor);
 }
 /*HEADER END -- HEADER END -- HEADER END -- HEADER END -- HEADER END -- HEADER END -- HEADER END*/
 /*HEADER END -- HEADER END -- HEADER END -- HEADER END -- HEADER END -- HEADER END -- HEADER END*/
@@ -138,21 +153,18 @@ main::-webkit-scrollbar {
   -ms-overflow-style: none; /* IE 10+ */
   /* scroll-behavior: smooth; */
 
-  border: 1px dashed white;
-}
-main > .mainSections:nth-child(even) {
-  background-color: aqua;
-}
-main > .mainSections:nth-child(odd) {
-  background-color: teal;
+  box-shadow: var(--defaultBoxShadow);
 }
 
 .mainSections {
-  min-height: calc(100% - var(--mainBlankArea) * 2);
-  margin: 0 var(--mainBlankArea) var(--mainBlankArea) var(--mainBlankArea);
-  padding-top: var(--mainBlankArea);
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: 80px auto;
 }
 
+.mainSections > h2 {
+  margin-top: var(--mainBlankArea);
+}
 .mainSections > div {
 }
 
@@ -161,9 +173,18 @@ main > .mainSections:nth-child(odd) {
 
 /*MAIN > ABOUT -- MAIN > ABOUT -- MAIN > ABOUT -- MAIN > ABOUT -- MAIN > ABOUT -- MAIN > ABOUT*/
 /*MAIN > ABOUT -- MAIN > ABOUT -- MAIN > ABOUT -- MAIN > ABOUT -- MAIN > ABOUT -- MAIN > ABOUT*/
-/* #mainAbout {
-  display: none;
-} */
+#mainAbout > div {
+  padding: 0 var(--mainBlankArea);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1.2em;
+  line-height: 2em;
+
+  text-align: justify;
+  text-align-last: center;
+}
 /*MAIN > ABOUT END -- MAIN > ABOUT END -- MAIN > ABOUT END -- MAIN > ABOUT END -- MAIN > ABOUT END*/
 /*MAIN > ABOUT END -- MAIN > ABOUT END -- MAIN > ABOUT END -- MAIN > ABOUT END -- MAIN > ABOUT END*/
 
@@ -178,3 +199,27 @@ main > .mainSections:nth-child(odd) {
     background-color: rgb(0, 83, 160);
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+/*TESTING*/
+main > .mainSections:nth-child(even) {
+  background-image: url(../resources/images/ui-bg_stripes_01.png);
+  background-repeat: repeat;
+}
+main > .mainSections:nth-child(odd) {
+  background-image: url(../resources/images/ui-bg_stripes_02.png);
+  background-repeat: repeat;
+}
+
+/* #pageParent > main {
+  border: 1px dashed white;
+} */

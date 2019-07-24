@@ -9,7 +9,8 @@
 
   --defaultTransition: ease-in-out 0.1s all;
 
-  --defaultBoxShadow: inset 0 0 35px 0 #000000a6;
+  --defaultInsetBoxShadow: inset 0 0 35px 0 #000000a6;
+  --defaultInsetBoxShadowMobile: inset 0 0 17px 0 #000000a6;
 }
 
 /*OTHER -- OTHER -- OTHER -- OTHER -- OTHER -- OTHER -- OTHER -- OTHER*/
@@ -22,6 +23,11 @@ body {
 #pageParent {
   display: grid;
   grid-template-columns: minmax(calc(30% - var(--mainBlankArea2x)), 200px) calc(70% - var(--mainBlankArea2x));
+  grid-template-rows: auto;
+  grid-template-areas:
+    "header main"
+    "header main";
+
   background-color: var(--mainBgColor);
   min-height: 100vh;
   /* max-height: 100vh; */
@@ -44,6 +50,8 @@ h2 {
 /*HEADER -- HEADER -- HEADER -- HEADER -- HEADER -- HEADER -- HEADER -- HEADER -- HEADER*/
 
 #pageParent > header {
+  grid-area: header;
+
   background-color: var(--contentBgColor);
   padding: var(--mainBlankArea);
   max-height: calc(100vh - (var(--mainBlankArea) * 2));
@@ -52,7 +60,7 @@ h2 {
   grid-template-rows: 60% 40%;
   /* grid-template-rows: 6fr 4fr;      <<<<    WONT WORK*/
 
-  box-shadow: var(--defaultBoxShadow);
+  box-shadow: var(--defaultInsetBoxShadow);
 
   background-image: url(../resources/images/oneYork_1.jpg);
   background-size: cover;
@@ -88,7 +96,7 @@ header > article {
 /*NAV -- NAV -- NAV -- NAV -- NAV -- NAV -- NAV -- NAV*/
 
 #navContainer > nav {
-  margin: 0 auto;
+  /* margin: 0 auto; */
   display: inline-block;
 }
 #navContainer > nav ul {
@@ -145,6 +153,7 @@ main::-webkit-scrollbar {
 }
 
 #pageParent > main {
+  grid-area: main;
   overflow: hidden;
   box-sizing: content-box;
   background-color: var(--contentBgColor);
@@ -153,7 +162,7 @@ main::-webkit-scrollbar {
   -ms-overflow-style: none; /* IE 10+ */
   /* scroll-behavior: smooth; */
 
-  box-shadow: var(--defaultBoxShadow);
+  box-shadow: var(--defaultInsetBoxShadow);
 }
 
 .mainSections {
@@ -197,18 +206,37 @@ main::-webkit-scrollbar {
 @media only screen and (max-width: 800px) {
   #pageParent {
     background-color: rgb(0, 83, 160);
+
+    grid-template-columns: 100%;
+    grid-template-rows: 10vh 90vh;
+    grid-template-areas:
+      "header header"
+      "main main";
+  }
+
+  #pageParent > header {
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 100%;
+    padding: 0;
+    background-image: none;
+    background-color: var(--defaultFontColor);
+    box-shadow: var(--defaultInsetBoxShadowMobile);
+  }
+  header > article {
+    align-items: start;
+    margin-left: var(--mainBlankArea);
+  }
+  
+  #navContainer > nav {
+    /* width: 100%; */
+    align-self: flex-end;
+    margin-right: var(--mainBlankArea);
+  }
+  #navContainer > nav ul {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
   }
 }
-
-
-
-
-
-
-
-
-
-
 
 /*TESTING*/
 main > .mainSections:nth-child(even) {

@@ -101,8 +101,8 @@ header > article {
 }
 #navContainer > nav ul {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, 1fr);
+  /* grid-template-rows: 1fr; */
 }
 #navContainer > nav > ul > li > a > svg {
   height: 40px;
@@ -163,10 +163,11 @@ main::-webkit-scrollbar {
   /* scroll-behavior: smooth; */
 
   box-shadow: var(--defaultInsetBoxShadow);
+  max-height: 100vh;
 }
 
 .mainSections {
-  min-height: 100%;
+  min-height: 100vh;
   display: grid;
   grid-template-rows: 80px auto;
 }

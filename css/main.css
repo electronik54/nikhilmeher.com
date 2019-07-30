@@ -6,6 +6,7 @@
   --mainBgColor: rgb(37, 37, 37);
 
   --defaultFontColor: rgb(226, 226, 226);
+  --hoverBg: rgba(226, 226, 226, 0.2);
 
   --defaultTransition: ease-in-out 0.1s all;
 
@@ -38,9 +39,13 @@ body {
 
 h2 {
   text-align: center;
-  font-size: 2em;
+  font-size: 2.2em;
   /* margin: 10px 0; */
-  font-family: "Didact Gothic", sans-serif;
+}
+h3 {
+  text-align: center;
+  font-size: 1.5em;
+  /* margin: 10px 0; */
 }
 
 /*OTHER END -- OTHER END -- OTHER END -- OTHER END -- OTHER END -- OTHER END*/
@@ -160,7 +165,7 @@ main::-webkit-scrollbar {
   overflow-y: scroll;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE 10+ */
-  /* scroll-behavior: smooth; */
+  scroll-behavior: smooth;
 
   box-shadow: var(--defaultInsetBoxShadow);
   max-height: 100vh;
@@ -172,10 +177,34 @@ main::-webkit-scrollbar {
   grid-template-rows: 80px auto;
 }
 
-.mainSections > h2 {
+.mainSections h2 {
   margin-top: var(--mainBlankArea);
+  display: inline-block;
+  width: fit-content;
+  justify-self: center;
+}
+.mainSections h2:after {
+  content: "";
+  display: block;
+  border-bottom: 1px solid;
+  width: 75%;
+  margin: 0 auto 0 auto;
+}
+.mainSections h3 {
+  margin-top: calc(var(--mainBlankArea) * 2);
 }
 .mainSections > div {
+  padding: 0 var(--mainBlankArea);
+
+  font-size: 1.2em;
+  line-height: 2em;
+
+  text-align: justify;
+  text-align-last: center;
+}
+.mainSections .portfolioArt:hover {
+  transition: var(--defaultTransition);
+  background-color: var(--hoverBg);
 }
 
 /*MAIN END -- MAIN END -- MAIN END -- MAIN END -- MAIN END -- MAIN END -- MAIN END */
@@ -184,16 +213,10 @@ main::-webkit-scrollbar {
 /*MAIN > ABOUT -- MAIN > ABOUT -- MAIN > ABOUT -- MAIN > ABOUT -- MAIN > ABOUT -- MAIN > ABOUT*/
 /*MAIN > ABOUT -- MAIN > ABOUT -- MAIN > ABOUT -- MAIN > ABOUT -- MAIN > ABOUT -- MAIN > ABOUT*/
 #mainAbout > div {
-  padding: 0 var(--mainBlankArea);
+  margin-bottom: calc(var(--mainBlankArea) * 2);
   display: flex;
   justify-content: center;
   align-items: center;
-
-  font-size: 1.2em;
-  line-height: 2em;
-
-  text-align: justify;
-  text-align-last: center;
 }
 /*MAIN > ABOUT END -- MAIN > ABOUT END -- MAIN > ABOUT END -- MAIN > ABOUT END -- MAIN > ABOUT END*/
 /*MAIN > ABOUT END -- MAIN > ABOUT END -- MAIN > ABOUT END -- MAIN > ABOUT END -- MAIN > ABOUT END*/
@@ -227,7 +250,7 @@ main::-webkit-scrollbar {
     align-items: start;
     margin-left: var(--mainBlankArea);
   }
-  
+
   #navContainer > nav {
     /* width: 100%; */
     align-self: flex-end;

@@ -21,6 +21,11 @@
     <link href="https://fonts.googleapis.com/css?family=Ropa+Sans|Didact+Gothic&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsiveslides.css">
+
+    <!-- used by responsiveSlides.js -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="js/ResponsiveSlides.js"></script>
 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.4/vivus.min.js"></script> -->
 
@@ -28,6 +33,30 @@
 </head>
 <script>
     // alert("SITE STILL UNDER DEVELOPEMENT");
+
+
+
+
+    $(document).ready(function () {
+        $(".rslides").responsiveSlides({
+            auto: true,             // Boolean: Animate automatically, true or false
+            speed: 500,            // Integer: Speed of the transition, in milliseconds
+            timeout: 4000,          // Integer: Time between slide transitions, in milliseconds
+            pager: true,           // Boolean: Show pager, true or false
+            nav: false,             // Boolean: Show navigation, true or false
+            random: false,          // Boolean: Randomize the order of the slides, true or false
+            pause: false,           // Boolean: Pause on hover, true or false
+            pauseControls: true,    // Boolean: Pause when hovering controls, true or false
+            prevText: "Previous",   // String: Text for the "previous" button
+            nextText: "Next",       // String: Text for the "next" button
+            maxwidth: "",           // Integer: Max-width of the slideshow, in pixels
+            navContainer: "",       // Selector: Where controls should be appended to, default is after the 'ul'
+            manualControls: "",     // Selector: Declare custom pager navigation
+            namespace: "rslides",   // String: Change the default namespace used
+            before: function () { },   // Function: Before callback
+            after: function () { }     // Function: After callback
+        });
+    });
 </script>
 
 <body>
@@ -61,7 +90,7 @@
                                 </svg>
                             </a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="#portfolio" title="personal"><svg xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 500 500">
                                     <rect class="cls-1" width="500" height="500" stroke-width="0" />
@@ -70,9 +99,9 @@
                                     <path class="cls-2" d="M344.69,424.94s85.09-193.63-97.17-193.63" />
                                 </svg>
                             </a>
-                        </li>
+                        </li> -->
                         <li>
-                            <a href="#contact" title="portfolio">
+                            <a href="#portfolio" title="portfolio">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
                                     <rect class="cls-1" width="500" height="500" stroke-width="0" />
                                     <path class="cls-2"
@@ -85,7 +114,7 @@
                                 </svg>
                             </a>
                         </li>
-                        <!-- <li>
+                        <li>
                             <a href="#contact" title="contact">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
                                     <rect class="cls-1" width="500" height="500" stroke-width="0" />
@@ -94,7 +123,7 @@
                                     <polyline class="cls-2" points="75 134.88 251.12 264.77 425 134.88" />
                                 </svg>
                             </a>
-                        </li> -->
+                        </li>
                     </ul>
                 </nav>
             </article>
@@ -132,7 +161,6 @@
                         looking to
                         learn something new.</p>
                 </div>
-
             </section>
 
             <!-- <section id="home" class="mainSections">
@@ -149,17 +177,76 @@
             <section id="portfolio" class="mainSections">
                 <h2>PORTFOLIO</h2>
                 <div>
-                    <h3>Resume</h3>
                     <article>
-
-                        <a href="resources/nikhil_meher_resume.pdf" target="_blank">download</a>
-
+                        <h3>Download resume...</h3>
+                        <a href="resources/nikhil_meher_resume.pdf" target="_blank" style="color: var(--defaultFontColor)">link</a>
                     </article>
 
                     <h3>Web applications</h3>
-                    <article>
+                    <article class="portfolioArt">
                         <h4>Slot cars</h4>
+                        <ul class="rslides">
+                            <li><img src="https://dummyimage.com/700x500/000/fff.jpg&text=image1" alt=""></li>
+                            <li><img src="https://dummyimage.com/700x500/000/fff.jpg&text=image2" alt=""></li>
+                            <li><img src="https://dummyimage.com/700x500/000/fff.jpg&text=image3" alt=""></li>
+                        </ul>
+                        <p>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut obcaecati officia optio
+                            perferendis voluptate, illo saepe aliquid nemo error quas. Vero quibusdam mollitia nesciunt
+                            voluptatem laboriosam autem dolores culpa, quia rerum illo aperiam quae. Alias mollitia
+                            quisquam vel consequuntur aliquam sunt odit quia asperiores soluta nisi? Accusamus
+                            reprehenderit harum pariatur.
+                        </p>
                     </article>
+                    
+                    <article class="portfolioArt">
+                        <h4>Web site - 1</h4>
+                        <ul class="rslides">
+                            <li><img src="https://dummyimage.com/700x500/000/fff.jpg&text=image1" alt=""></li>
+                            <li><img src="https://dummyimage.com/700x500/000/fff.jpg&text=image2" alt=""></li>
+                            <li><img src="https://dummyimage.com/700x500/000/fff.jpg&text=image3" alt=""></li>
+                        </ul>
+                        <p>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut obcaecati officia optio
+                            perferendis voluptate, illo saepe aliquid nemo error quas. Vero quibusdam mollitia nesciunt
+                            voluptatem laboriosam autem dolores culpa, quia rerum illo aperiam quae. Alias mollitia
+                            quisquam vel consequuntur aliquam sunt odit quia asperiores soluta nisi? Accusamus
+                            reprehenderit harum pariatur.
+                        </p>
+                    </article>
+                    
+                    <article class="portfolioArt">
+                        <h4>Web site - 2</h4>
+                        <ul class="rslides">
+                            <li><img src="https://dummyimage.com/700x500/000/fff.jpg&text=image1" alt=""></li>
+                            <li><img src="https://dummyimage.com/700x500/000/fff.jpg&text=image2" alt=""></li>
+                            <li><img src="https://dummyimage.com/700x500/000/fff.jpg&text=image3" alt=""></li>
+                        </ul>
+                        <p>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut obcaecati officia optio
+                            perferendis voluptate, illo saepe aliquid nemo error quas. Vero quibusdam mollitia nesciunt
+                            voluptatem laboriosam autem dolores culpa, quia rerum illo aperiam quae. Alias mollitia
+                            quisquam vel consequuntur aliquam sunt odit quia asperiores soluta nisi? Accusamus
+                            reprehenderit harum pariatur.
+                        </p>
+                    </article>
+                    
+                    <article class="portfolioArt">
+                        <h4>Web site - 3</h4>
+                        <ul class="rslides">
+                            <li><img src="https://dummyimage.com/700x500/000/fff.jpg&text=image1" alt=""></li>
+                            <li><img src="https://dummyimage.com/700x500/000/fff.jpg&text=image2" alt=""></li>
+                            <li><img src="https://dummyimage.com/700x500/000/fff.jpg&text=image3" alt=""></li>
+                        </ul>
+                        <p>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut obcaecati officia optio
+                            perferendis voluptate, illo saepe aliquid nemo error quas. Vero quibusdam mollitia nesciunt
+                            voluptatem laboriosam autem dolores culpa, quia rerum illo aperiam quae. Alias mollitia
+                            quisquam vel consequuntur aliquam sunt odit quia asperiores soluta nisi? Accusamus
+                            reprehenderit harum pariatur.
+                        </p>
+                    </article>
+
                 </div>
             </section>
 
@@ -167,8 +254,8 @@
                 <h2>Contact</h2>
                 <div>
                     <a href="https://www.linkedin.com/in/nikhilmeher/" title="linkedin profile" target="_blank">
-                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-                        viewBox="0 0 126 126" style="enable-background:new 0 0 126 126;" xml:space="preserve">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 126 126"
+                            style="enable-background:new 0 0 126 126;" xml:space="preserve">
                             <rect x="34" y="53" width="8" height="40" />
                             <rect x="34" y="32" width="8" height="8" />
                             <path
@@ -179,8 +266,8 @@
                     </a>
 
                     <a href="https://www.instagram.com/nikhil.n.meher/?hl=en" title="linkedin profile" target="_blank">
-                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-                        viewBox="0 0 126 126" style="enable-background:new 0 0 126 126;" xml:space="preserve">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 126 126"
+                            style="enable-background:new 0 0 126 126;" xml:space="preserve">
                             <path d="M126,0H0v126h126V0z M118,118H8V8h110V118z" />
                             <path d="M63,92c16,0,29-13,29-29S79,34,63,34S34,47,34,63S47,92,63,92z M63,42c11.6,0,21,9.4,21,21s-9.4,21-21,21s-21-9.4-21-21
 	S51.4,42,63,42z" />

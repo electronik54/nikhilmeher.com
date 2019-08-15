@@ -6,6 +6,7 @@
   --mainBgColor: rgb(37, 37, 37);
 
   --defaultFontColor: rgb(226, 226, 226);
+  --highlightFontColor: rgb(255, 16, 88);
   --hoverBg: rgba(226, 226, 226, 0.2);
 
   --defaultTransition: ease-in-out 0.1s all;
@@ -17,8 +18,14 @@
 /*OTHER -- OTHER -- OTHER -- OTHER -- OTHER -- OTHER -- OTHER -- OTHER*/
 /*OTHER -- OTHER -- OTHER -- OTHER -- OTHER -- OTHER -- OTHER -- OTHER*/
 
+a {
+  text-decoration: none;
+  color: var(--defaultFontColor);
+}
+
 body {
   font-size: 18px;
+  background-color: var(--mainBgColor);
 }
 
 #pageParent {
@@ -29,25 +36,35 @@ body {
     "header main"
     "header main";
 
-  background-color: var(--mainBgColor);
   min-height: 100vh;
+  max-width: 2000px;
   /* max-height: 100vh; */
   justify-content: space-evenly;
   color: var(--defaultFontColor);
   font-family: "Ropa Sans", sans-serif;
 }
-
+/* h1,
+h2,
+h3,
+h4 {
+  color: var(--highlightFontColor);
+} */
 h2 {
-  text-align: center;
-  font-size: 2.2em;
-  /* margin: 10px 0; */
+  font-size: 2.7em;
 }
 h3 {
-  text-align: center;
   font-size: 1.5em;
-  /* margin: 10px 0; */
+}
+h4 {
+  font-size: 1.2em;
 }
 
+.svgIcon {
+  height: 40px;
+  width: 40px;
+  stroke-width: 25;
+  fill: var(--defaultFontColor);
+}
 /*OTHER END -- OTHER END -- OTHER END -- OTHER END -- OTHER END -- OTHER END*/
 /*OTHER END -- OTHER END -- OTHER END -- OTHER END -- OTHER END -- OTHER END*/
 
@@ -100,6 +117,12 @@ header > article {
 /*NAV -- NAV -- NAV -- NAV -- NAV -- NAV -- NAV -- NAV*/
 /*NAV -- NAV -- NAV -- NAV -- NAV -- NAV -- NAV -- NAV*/
 
+.mainSections:hover > h2,
+.mainSections > div > article:hover > h3,
+.mainSections > div > article > article:hover > h4 {
+  color: var(--highlightFontColor);
+}
+
 #navContainer > nav {
   /* margin: 0 auto; */
   display: inline-block;
@@ -110,11 +133,12 @@ header > article {
   /* grid-template-rows: 1fr; */
 }
 #navContainer > nav > ul > li > a > svg {
-  height: 40px;
-  width: 40px;
-  stroke-width: 25;
   stroke: var(--defaultFontColor);
   fill: none;
+}
+#navContainer > nav > ul > li:hover > a > svg {
+  transition: var(--defaultTransition);
+  stroke: var(--highlightFontColor);
 }
 #navContainer > nav > ul > li {
   margin: 1vw;
@@ -177,22 +201,32 @@ main::-webkit-scrollbar {
   grid-template-rows: 80px auto;
 }
 
-.mainSections h2 {
-  margin-top: var(--mainBlankArea);
-  display: inline-block;
+.mainSections h2,
+.mainSections h3 {
   width: fit-content;
-  justify-self: center;
+  margin: var(--mainBlankArea) auto 0 auto;
 }
-.mainSections h2:after {
+.mainSections h2:after,
+.mainSections h2:before,
+.mainSections h3:after {
   content: "";
   display: block;
   border-bottom: 1px solid;
   width: 75%;
-  margin: 0 auto 0 auto;
 }
+.mainSections h2:after,
+.mainSections h2:before {
+  margin: -5px auto -2px auto;
+}
+
+.mainSections h3:after {
+  margin: -8px auto;
+}
+
 .mainSections h3 {
-  margin-top: calc(var(--mainBlankArea) * 2);
+  /* margin-top: var(--mainBlankArea); */
 }
+
 .mainSections > div {
   padding: 0 var(--mainBlankArea);
 
@@ -201,8 +235,20 @@ main::-webkit-scrollbar {
 
   text-align: justify;
   text-align-last: center;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  margin-top: var(--mainBlankArea);
 }
-.mainSections .portfolioArt:hover {
+.mainSections > div > article {
+  /* display: grid; */
+}
+.portfolioArt {
+  margin: var(--mainBlankArea) 0;
+}
+.portfolioArt:hover {
   transition: var(--defaultTransition);
   background-color: var(--hoverBg);
 }
@@ -214,12 +260,23 @@ main::-webkit-scrollbar {
 /*MAIN > ABOUT -- MAIN > ABOUT -- MAIN > ABOUT -- MAIN > ABOUT -- MAIN > ABOUT -- MAIN > ABOUT*/
 #mainAbout > div {
   margin-bottom: calc(var(--mainBlankArea) * 2);
-  display: flex;
   justify-content: center;
-  align-items: center;
+  /* display: flex;
+  align-items: center; */
 }
 /*MAIN > ABOUT END -- MAIN > ABOUT END -- MAIN > ABOUT END -- MAIN > ABOUT END -- MAIN > ABOUT END*/
 /*MAIN > ABOUT END -- MAIN > ABOUT END -- MAIN > ABOUT END -- MAIN > ABOUT END -- MAIN > ABOUT END*/
+
+/*CONTACT -- CONTACT -- CONTACT -- CONTACT -- CONTACT -- CONTACT -- CONTACT -- CONTACT -- CONTACT*/
+/*CONTACT -- CONTACT -- CONTACT -- CONTACT -- CONTACT -- CONTACT -- CONTACT -- CONTACT -- CONTACT*/
+#contact > div > article > ul {
+  display: flex;
+  justify-content: space-evenly;
+  width: 50%;
+  margin: 0 auto;
+}
+/*CONTACT END -- CONTACT END -- CONTACT END -- CONTACT END -- CONTACT END -- CONTACT END*/
+/*CONTACT END -- CONTACT END -- CONTACT END -- CONTACT END -- CONTACT END -- CONTACT END*/
 
 @media only screen and (max-width: 1200px) {
   /* #headderAbout {

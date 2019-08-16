@@ -7,22 +7,15 @@
   overflow: hidden;
   width: 100%;
   padding: 0;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  
+  background-color: rgba(249, 249, 249, 0.03);
 }
 .rslides {
   display: flex;
   justify-content: center;
-}
-
-.rslides2 {
-  position: relative;
-  list-style: none;
-  overflow: hidden;
-  width: 100%;
-  padding: 0;
-  box-shadow: none;
-  -moz-box-shadow: none;
-  -webkit-box-shadow: none;
-  margin: 0 auto;
 }
 
 .rslides_tabs {

@@ -7,7 +7,7 @@
 
   --defaultFontColor: rgb(226, 226, 226);
   --highlightFontColor: rgb(255, 16, 88);
-  --hoverBg: rgba(226, 226, 226, 0.2);
+  --hoverBg: rgba(226, 226, 226, 0.05);
 
   --defaultTransition: ease-in-out 0.1s all;
 
@@ -22,10 +22,22 @@ a {
   text-decoration: none;
   color: var(--defaultFontColor);
 }
+i {
+  font-style: italic;
+}
+b,
+strong {
+  font-weight: bold;
+}
 
 body {
   font-size: 18px;
   background-color: var(--mainBgColor);
+}
+
+.centerAlignText {
+  text-align: justify;
+  text-align-last: center;
 }
 
 #pageParent {
@@ -42,6 +54,7 @@ body {
   justify-content: space-evenly;
   color: var(--defaultFontColor);
   font-family: "Ropa Sans", sans-serif;
+  margin: 0 auto;
 }
 /* h1,
 h2,
@@ -202,18 +215,21 @@ main::-webkit-scrollbar {
 }
 
 .mainSections h2,
-.mainSections h3 {
-  width: fit-content;
+.mainSections h3,
+.mainSections h4 {
   margin: var(--mainBlankArea) auto 0 auto;
 }
-.mainSections h2:after,
+
+/*!!!!!!     TEST AND IMPLEMENT << CAUSES BUG IN FIREFOX     !!!!!!*/
+/* .mainSections h2:after,
 .mainSections h2:before,
 .mainSections h3:after {
   content: "";
   display: block;
   border-bottom: 1px solid;
   width: 75%;
-}
+} */
+
 .mainSections h2:after,
 .mainSections h2:before {
   margin: -5px auto -2px auto;
@@ -233,24 +249,30 @@ main::-webkit-scrollbar {
   font-size: 1.2em;
   line-height: 2em;
 
-  text-align: justify;
-  text-align-last: center;
-
   display: flex;
   align-items: center;
   flex-direction: column;
 
   margin-top: var(--mainBlankArea);
+
+  justify-content: center;
 }
 .mainSections > div > article {
-  /* display: grid; */
+  display: grid;
 }
 .portfolioArt {
-  margin: var(--mainBlankArea) 0;
+  display: grid;
+  /* grid-template-rows: 80px auto; */
+  margin: 0 var(--mainBlankArea) var(--mainBlankArea) var(--mainBlankArea);
+  padding: 0 calc(var(--mainBlankArea) / 2) calc(var(--mainBlankArea) / 2) calc(var(--mainBlankArea) / 2);
 }
 .portfolioArt:hover {
   transition: var(--defaultTransition);
   background-color: var(--hoverBg);
+}
+.portfolioArt > p,
+.portfolioArt > details {
+  margin: 0 0 calc(var(--mainBlankArea) / 2) 0;
 }
 
 /*MAIN END -- MAIN END -- MAIN END -- MAIN END -- MAIN END -- MAIN END -- MAIN END */
@@ -260,7 +282,6 @@ main::-webkit-scrollbar {
 /*MAIN > ABOUT -- MAIN > ABOUT -- MAIN > ABOUT -- MAIN > ABOUT -- MAIN > ABOUT -- MAIN > ABOUT*/
 #mainAbout > div {
   margin-bottom: calc(var(--mainBlankArea) * 2);
-  justify-content: center;
   /* display: flex;
   align-items: center; */
 }
@@ -269,6 +290,9 @@ main::-webkit-scrollbar {
 
 /*CONTACT -- CONTACT -- CONTACT -- CONTACT -- CONTACT -- CONTACT -- CONTACT -- CONTACT -- CONTACT*/
 /*CONTACT -- CONTACT -- CONTACT -- CONTACT -- CONTACT -- CONTACT -- CONTACT -- CONTACT -- CONTACT*/
+#contact > div > article > ul > li {
+  margin: 0 var(--mainBlankArea);
+}
 #contact > div > article > ul {
   display: flex;
   justify-content: space-evenly;
@@ -317,10 +341,14 @@ main::-webkit-scrollbar {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
   }
+
+  .mainSections {
+    min-height: calc(100vh - 67px);
+  }
 }
 
 /*TESTING*/
-main > .mainSections:nth-child(even) {
+/* main > .mainSections:nth-child(even) {
   background-image: url(../resources/images/ui-bg_stripes_01.png);
   background-repeat: repeat;
 }
@@ -329,6 +357,6 @@ main > .mainSections:nth-child(odd) {
   background-repeat: repeat;
 }
 
-/* #pageParent > main {
+#pageParent > main {
   border: 1px dashed white;
 } */

@@ -24,6 +24,10 @@ a {
 }
 i {
   font-style: italic;
+  transition: var(--defaultTransition);
+}
+i:hover {
+  color: var(--highlightFontColor);
 }
 b,
 strong {
@@ -77,6 +81,9 @@ h4 {
   width: 40px;
   stroke-width: 25;
   fill: var(--defaultFontColor);
+}
+.svgIcon .transparentFill{
+  fill: transparent
 }
 /*OTHER END -- OTHER END -- OTHER END -- OTHER END -- OTHER END -- OTHER END*/
 /*OTHER END -- OTHER END -- OTHER END -- OTHER END -- OTHER END -- OTHER END*/
@@ -153,7 +160,9 @@ header > article {
   transition: var(--defaultTransition);
   stroke: var(--highlightFontColor);
 }
-#navContainer > nav > ul > li {
+#navContainer > nav > ul > li ,
+#contact ul > li
+{
   margin: 1vw;
 
   background-color: var(--mainBgColor);
@@ -244,7 +253,6 @@ main::-webkit-scrollbar {
 }
 
 .mainSections > div {
-  padding: 0 var(--mainBlankArea);
 
   font-size: 1.2em;
   line-height: 2em;
@@ -259,6 +267,7 @@ main::-webkit-scrollbar {
 }
 .mainSections > div > article {
   display: grid;
+  padding: 0 var(--mainBlankArea);
 }
 .portfolioArt {
   display: grid;
@@ -292,6 +301,7 @@ main::-webkit-scrollbar {
 /*CONTACT -- CONTACT -- CONTACT -- CONTACT -- CONTACT -- CONTACT -- CONTACT -- CONTACT -- CONTACT*/
 #contact > div > article > ul > li {
   margin: 0 var(--mainBlankArea);
+  height: 40px;
 }
 #contact > div > article > ul {
   display: flex;
@@ -345,6 +355,9 @@ main::-webkit-scrollbar {
   .mainSections {
     min-height: calc(100vh - 67px);
   }
+  .portfolioArt {
+    margin: 0 0 var(--mainBlankArea) 0;
+}
 }
 
 /*TESTING*/
